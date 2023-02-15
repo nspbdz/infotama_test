@@ -4,11 +4,6 @@
 @section('konten')
 <h1 class="text-center">Form Pendaftaran</h1>
 
-
-<?php
-// dd($genders);
-
-?>
     <div class="container d-flex justify-content-center align-items-center vh-100">
 
     <div class="card align-items-center" style="width: 600px; height:550px">
@@ -155,7 +150,6 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <!-- <th>Gender</th> -->
                             <th>Actions</th>
 
                         </tr>
@@ -175,11 +169,8 @@
 @endsection
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
-<!-- <script src="js/jquery.min.js" type="text/javascript"></script> -->
-<!-- <script src="js/jquery.dataTables.min.js" type="text/javascript"></script> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js" defer="defer"></script>
@@ -197,7 +188,6 @@ $(document).ready(function () {
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
-            // { data: 'genders.name', name: 'gender' },
             { data: 'actions', name: 'actions' },
         ]
     });

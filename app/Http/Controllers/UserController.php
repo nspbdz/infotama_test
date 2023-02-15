@@ -18,8 +18,6 @@ use Yajra\DataTables\Facades\DataTables;
 class UserController extends Controller
 {
     public function data(Request $request){
-        // retrun $request;
-
 
         if (request()->ajax()) {
             $users = User::query()->with('genders')->orderBy('created_at', 'desc');
@@ -59,7 +57,6 @@ class UserController extends Controller
 
     public function destroy(Request $request)
     {
-        // return $request->id;
 
         $user = User::findOrFail($request->id);
         $user->delete();
@@ -71,7 +68,6 @@ class UserController extends Controller
 
     public function store(RegisterRequest $request)
     {
-        // try {
             $user = new User;
             $user->name = $request->name;
             $user->gender_id = $request->gender;
@@ -93,9 +89,5 @@ class UserController extends Controller
 
             Alert::success('Congrats', 'You\'ve Successfully Registered');
             return redirect('/');
-        // } catch (QueryException $exception) {
-        //     Alert::error('Error', 'There was an error while saving your data. Please try again later.');
-        //     return back()->withInput();
-        // }
     }
 }
