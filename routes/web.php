@@ -20,8 +20,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [UserController::class, 'index']);
 Route::post('/user/register', [UserController::class, 'store']);
 Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/users/data', [UserController::class, 'data'])->name('users.data');
 
 Auth::routes();
-// Route::get('api/customers','CustomerController@data');
-// Route::get('customers','CustomerController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -17,16 +17,13 @@ use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
 {
+    public function data(Request $request){
+        // retrun $request;
 
-    public function index(){
-
-        $user=User::get();
-        $genders=Gender::get();
-        $hobbies=Hobby::get();
-        // Alert::success('Congrats', 'You\'ve Successfully Registered');
 
         if (request()->ajax()) {
             $users = User::query()->with('genders')->orderBy('created_at', 'desc');
+
             return DataTables::of($users)
                 ->addColumn('actions', function ($user) {
                     // $editUrl = route('users.edit', $user->id);
@@ -44,9 +41,18 @@ class UserController extends Controller
                         </div>
                     EOT;
                 })
+
                 ->rawColumns(['actions'])
                 ->make(true);
         }
+
+    }
+
+    public function index(){
+
+        $user=User::get();
+        $genders=Gender::get();
+        $hobbies=Hobby::get();
 
         return view('register',['user' => $user, 'genders' => $genders, 'hobbies' => $hobbies]);
     }

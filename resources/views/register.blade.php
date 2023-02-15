@@ -148,6 +148,7 @@
                 <div class="card-header">Daftar User</div>
 
                 <div class="card-body">
+
                     <table id="tbl_list" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -190,7 +191,8 @@ $(document).ready(function () {
    $('#tbl_list').DataTable({
         processing: true,
         serverSide: true,
-        ajax: '{{ url()->current() }}',
+        ajax: "{{ route('users.data') }}",
+
         columns: [
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
