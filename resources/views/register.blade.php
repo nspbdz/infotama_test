@@ -148,14 +148,13 @@
                 <div class="card-header">Daftar User</div>
 
                 <div class="card-body">
-                    <a href="#" class="btn btn-sm btn-success mb-2">Tambah Data</a>
                     <table id="tbl_list" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Gender</th>
+                            <!-- <th>Gender</th> -->
                             <th>Actions</th>
 
                         </tr>
@@ -196,7 +195,7 @@ $(document).ready(function () {
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
-            { data: 'genders.name', name: 'gender' },
+            // { data: 'genders.name', name: 'gender' },
             { data: 'actions', name: 'actions' },
         ]
     });
